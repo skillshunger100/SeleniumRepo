@@ -8,14 +8,20 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Intro {
 	
+	WebDriver driver = null;
+	
 	@Test
 	public void base() {
-		WebDriver driver = null;
+		
 		WebDriverManager.chromedriver().setup();
 		
 		driver = new ChromeDriver();
 		driver.get("https://www.facebook.com/");
 		
+	}
+	
+	public void leave() {
+		driver.close();
 	}
 
 }
